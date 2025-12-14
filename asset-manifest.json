@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mallefuralle-back/static/css/main.fbce5604.css",
+    "main.js": "/mallefuralle-back/static/js/main.12cbe1b7.js",
+    "index.html": "/mallefuralle-back/index.html",
+    "main.fbce5604.css.map": "/mallefuralle-back/static/css/main.fbce5604.css.map",
+    "main.12cbe1b7.js.map": "/mallefuralle-back/static/js/main.12cbe1b7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fbce5604.css",
+    "static/js/main.12cbe1b7.js"
+  ]
+}

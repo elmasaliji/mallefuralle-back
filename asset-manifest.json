@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mallefuralle-back/static/css/main.01e204f8.css",
-    "main.js": "/mallefuralle-back/static/js/main.c2cb168a.js",
+    "main.css": "/mallefuralle-back/static/css/main.2911eb09.css",
+    "main.js": "/mallefuralle-back/static/js/main.a6d9c681.js",
     "index.html": "/mallefuralle-back/index.html",
-    "main.01e204f8.css.map": "/mallefuralle-back/static/css/main.01e204f8.css.map",
-    "main.c2cb168a.js.map": "/mallefuralle-back/static/js/main.c2cb168a.js.map"
+    "main.2911eb09.css.map": "/mallefuralle-back/static/css/main.2911eb09.css.map",
+    "main.a6d9c681.js.map": "/mallefuralle-back/static/js/main.a6d9c681.js.map"
   },
   "entrypoints": [
-    "static/css/main.01e204f8.css",
-    "static/js/main.c2cb168a.js"
+    "static/css/main.2911eb09.css",
+    "static/js/main.a6d9c681.js"
   ]
 }

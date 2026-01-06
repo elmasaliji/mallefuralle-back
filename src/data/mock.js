@@ -20,7 +20,7 @@ export const artists = [
     id: 1,
     name: "DJ Set Marc Rixx",
     genre: "",
-    image: "/1.png",
+    image: `${process.env.PUBLIC_URL}/1.png`,
     description: "Mit jahrelanger Erfahrung, einem vielfältigen Musik mix und einer einzigartigen Bühnenpräsenz bringt er jede Party zum Kochen!",
     funFact: "Marc Rixx – Der unvergleichliche Party-DJ."
   },
@@ -28,7 +28,7 @@ export const artists = [
     id: 2,
     name: "Marry",
     genre: "",
-    image: "/2.png",
+    image: `${process.env.PUBLIC_URL}/2.png`,
     description: "Die unglaubliche Natürlichkeit, Eleganz und zugleich geballte Power machen MARRY einfach einzigartig- so, wie Ihr unverkennbares Markenzeichen: das Stirnband.",
     funFact: "Dies zu Recht, denn MARRY rockt alles, was ihr in die Quere kommt!"
   },
@@ -36,7 +36,7 @@ export const artists = [
     id: 3,
     name: "Nancy Franck",
     genre: "",
-    image: "/3.png",
+    image: `${process.env.PUBLIC_URL}/3.png`,
     description: "Fetzig wird es auf der Bühne mit der 22-jährigen Sängerin aus Aachen, die mit ihrenSongsPartystimmung pur verbreitet. Mit ihrer quirligen, frechen Art versteht sie es, ihr Publikum mitzureißen und die Korken so richtig knallen zu lassen.",
     funFact: "Nancy Franck, der neue Stern am Partyhimmel!"
   },
@@ -44,7 +44,8 @@ export const artists = [
     id: 4,
     name: "Bronaldos",
     genre: "",
-    image: "/4.png",
+   image: `${process.env.PUBLIC_URL}/4.png`,
+
     description: "Die drei Jungs heizen ihre Crowd ordentlich ein. Was sie vor allem ausmacht: Partylaune die mitreißt, eine lustige und charmante Art, und eine Bühnenshow die jeden zum mitmachen animiert.",
     funFact: "Bronaldos - Die Backstreet Boys der Insel! Partypower aus dem Herzen von Malle!"
   },
@@ -52,7 +53,8 @@ export const artists = [
     id: 5,
     name: "Sabbotage",
     genre: "",
-    image: "/5.png",
+    image: `${process.env.PUBLIC_URL}/5.png`,
+
     description: "Sabbotage, dieser Mann steht für schweißtreibende Bühnenshows, Moderation mit dem gewissen Augenzwinkern und vor allen Dingen für eingängige Ballermann-Evergreens wie „Glück auf (Wir müssen aufhören weniger zu trinken)“, „Wir versaufen unser Geld“ oder „Bierpolizei“.",
     funFact: "Sabbotage – Die Original Show aus dem Bierkönig/Mallorca"
   },
@@ -60,7 +62,8 @@ export const artists = [
     id: 6,
     name: "Minnie Rock",
     genre: "",
-    image: "/6.png",
+    image: `${process.env.PUBLIC_URL}/6.png`,
+
     description: "Minnie Rock verbindet Nostalgie mit modernen Produktionstechniken.",
     funFact: "Explosive Festival-Hymnen und gigantische Drops."
   },
@@ -68,7 +71,8 @@ export const artists = [
     id: 7,
     name: "Markus Becker",
     genre: "",
-    image: "/7.png",
+   image: `${process.env.PUBLIC_URL}/7.png`,
+
     description: "Seine Show ist ein Garant für gelungene Veranstaltungen wie zB. TV Shows, Apres Ski Partys, Beach-und Mallorca Partys, Oktoberfeste, Zelt-und Hallenveranstaltungen, Diskotheken, Stadtfeste aber auch Galas und Präsentationen",
     funFact: "Das rote Pferd - Wer kennt es nicht?"
   },
@@ -76,7 +80,8 @@ export const artists = [
     id: 8,
     name: "Stefan Stürmer",
     genre: "",
-    image: "/8.png",
+    image: `${process.env.PUBLIC_URL}/8.png`,
+
     description: "Zwischen dem Rauschen der Wellen, flirrenden Lichtern und dieser besonderen Mischung aus Freiheit, Leichtigkeit und Sommergefühl. Laut Stefan Stürmer hat der liebe Gott uns eine Insel geschenkt. Du fühlst, du bist gekommen um zu bleiben.",
     funFact: "Mit „Eine Meile“ präsentiert Stefan Stürmer einen Song, der das Lebensgefühl an der Mallorca-Promenade einfängt."
   }
@@ -131,7 +136,7 @@ export const tickets = [
   {
     id: 3,
     name: "First Class",
-    price: 0,
+    price: 199.40,
     priceText: "VIP",
     description: "Das ultimative VIP-Erlebnis",
     fullDescription: "Dieses VIP-Ticket bietet einer erwachsenen Person ein außergewöhnliches Veranstaltungserlebnis mit zahlreichen exklusiven Vorteilen – von bevorzugtem Einlass bis zu besonderen Begegnungen mit ausgewählten Künstlern.",
@@ -224,13 +229,13 @@ export const schedule = {
     name: "09. Mai 2026",
     image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&h=800&fit=crop",
     events: [
-      { time: "12:00", title: "Doors Open", artist: "Einlass" },
-      { time: "13:00", title: "Opening Set", artist: "Sunny Vibes" },
-      { time: "15:00", title: "Mainstage", artist: "Luna Beats" },
-      { time: "17:00", title: "Mainstage", artist: "DJ Thunder" },
-      { time: "19:00", title: "Mainstage", artist: "Bass Master" },
-      { time: "21:00", title: "Headline Act", artist: "Fire Starter" },
-      { time: "23:00", title: "Closing Set", artist: "Electra Soul" }
+      { time: "12:00", title: "Event", artist: "Artist" },
+      { time: "13:00", title: "Eventt", artist: "Artist" },
+      { time: "15:00", title: "Event", artist: "Artist" },
+      { time: "17:00", title: "Event", artist: "Artist" },
+      { time: "19:00", title: "Event", artist: "Artist" },
+      { time: "21:00", title: "Event", artist: "Artist" },
+      { time: "23:00", title: "Event", artist: "Artist" }
     ]
   }
 };
@@ -280,7 +285,7 @@ export const datenschutzData = {
 
 export const agbData = [
   {
-    title: '§1 Allgemein',
+    title: '§1 Allgemeine Geschäftsbedingungen für Veranstaltungen der CFE- Veranstaltung UG',
     content: `
 Allgemeine Geschäftsbedingungen für Veranstaltungen der CFE-Veranstaltung UG.
 
@@ -310,19 +315,18 @@ Die Veranstaltung findet auf einem ausgewiesenen Open-Air-Gelände an der Rudolf
   {
     title: '§3 Vertragsschluss',
     content: `
-a. Eine Ticketanfrage auf der Website stellt noch kein Vertragsangebot dar, sondern lediglich eine Aufforderung zur Abgabe eines Angebots.
+a. Eine Ticketanfrage auf der Website stellt noch kein Vertragsangebot dar. Sie dient lediglich als  Aufforderung an den Kunden, ein solches Angebot abzugeben. Das Angebot erfolgt erst, wenn der  Kunde alle relevanten Daten in das Bestellformular eingibt und dieses elektronisch an die jeweilige  Vorverkaufsstelle (Paylogic, Pfuelstraße 10997 Berlin) übermittelt. 
 
-b. Das Angebot erfolgt, sobald der Kunde alle erforderlichen Daten in das Bestellformular eingibt und dieses elektronisch an die jeweilige Vorverkaufsstelle übermittelt.
+b. Mit der Bestätigung der Ticketbestellung und der Rechnungsstellung durch die Vorverkaufsstelle  wird das Angebot angenommen; der Vertrag ist damit geschlossen. 
 
-c. Mit der Bestätigung der Ticketbestellung und der Rechnungsstellung durch die Vorverkaufsstelle wird das Angebot angenommen; der Vertrag ist damit geschlossen.
+c. Der Ticketkauf ist ausschließlich volljährigen und voll geschäftsfähigen Personen gestattet. 
 
-d. Der Ticketkauf ist ausschließlich volljährigen und voll geschäftsfähigen Personen gestattet.
+d. Eine Rückgabe gekaufter Tickets ist ausgeschlossen. Auch bei Onlinekäufen besteht kein  Widerrufsrecht gemäß § 312g Abs. 2 Satz 1 Nr. 9 BGB. 
 
-e. Eine Rückgabe gekaufter Tickets ist ausgeschlossen. Auch bei Onlinekäufen besteht kein Widerrufsrecht gemäß § 312g Abs. 2 Satz 1 Nr. 9 BGB.
+e. Tickets berechtigen zum Besuch der auf ihnen angegebenen Veranstaltung. 
 
-f. Tickets berechtigen ausschließlich zum Besuch der auf ihnen angegebenen Veranstaltung.
+f. Tickets sind nach Erhalt sicher aufzubewahren und vor schädlichen Einflüssen (Hitze, Feuchtigkeit,  Sonneneinstrahlung) zu schützen. Beschädigte oder unleserliche Tickets verlieren ihre Gültigkeit und  damit den Anspruch auf Zutritt. 
 
-g. Tickets sind nach Erhalt sicher aufzubewahren und vor schädlichen Einflüssen zu schützen. Beschädigte oder unleserliche Tickets verlieren ihre Gültigkeit.
 `
   },
 
@@ -342,134 +346,256 @@ d. Der Verlust von Tickets wird nicht ersetzt.
   {
     title: '§5 Einlassregelungen',
     content: `
-a. Zutritt erhält nur, wer ein gültiges Ticket vorlegt. Das Ticket berechtigt zu einem einmaligen Eintritt. Ein Wiedereinlass ist ausgeschlossen.
+a. Zutritt zum Gelände erhält nur, wer ein gültiges Ticket vorlegt. Das Ticket berechtigt zu einem  einmaligen Eintritt und nur für eine Person. Ein Wiedereinlass ist ausgeschlossen. Beim Eintritt wird  das Ticket vollständig entwertet. 
 
-b. Beim Einlass finden Taschen- und Personenkontrollen statt. Besucher erklären sich mit diesen Kontrollen einverstanden.
+b. Beim Einlass finden Sicherheitskontrollen statt. Besucher stimmen einer Durchsuchung von  Taschen sowie einer möglichen Leibesvisitation zu.
 
-c. Der Veranstalter kann Besuchern aus wichtigem Grund den Zutritt verweigern, insbesondere bei:
-- Mitführen verbotener Gegenstände
-- starkem Alkohol- oder Drogeneinfluss
-- rassistischen, sexistischen oder menschenverachtenden Äußerungen
-- Verstößen gegen Jugendschutzbestimmungen
+c. Der Veranstalter kann Besuchern aus wichtigem Grund den Zutritt verweigern. Wichtige Gründe  sind insbesondere: 
 
-d. In diesen Fällen verliert das Ticket seine Gültigkeit; eine Erstattung erfolgt nicht.
+i. Mitführen verbotener Gegenstände (siehe Ziffer 6). 
 
-e. Zutritt haben grundsätzlich nur Erwachsene ab 18 Jahren. Jugendliche ab 16 Jahren nur mit Begleitperson und Muttizettel.
+ii. Offensichtlich starker Alkohol- oder Drogeneinfluss. 
+
+iii. offensichtlich homophobe, sexistische, rassistische oder menschenverachtende Einstellungen. iv. Verstöße gegen Jugendschutzbestimmungen. 
+
+d. In diesen Fällen verliert das Ticket seine Gültigkeit; eine Erstattung erfolgt nicht. e. Der Veranstalter kann die Vorlage eines aktuellen negativen Corona-Tests (max. 24 h alt), eines  gültigen Impf- oder Genesenen-Nachweises sowie Gesundheitskontrollen wie etwa  Temperaturmessungen verlangen, sofern dies nach sorgfältiger Prüfung aufgrund pandemischer  Risiken angemessen erscheint. 
+
+f. Zutritt haben grundsätzlich nur Erwachsene ab 18 Jahren. Jugendliche ab 16 Jahren dürfen das  Event besuchen, wenn sie eine volljährige Begleitperson und ein korrekt ausgefülltes  Erziehungsbeauftragungsformular („Muttizettel“) vorweisen. Kindern und Jugendlichen unter 16  Jahren ist der Zutritt nicht erlaubt – außer beim Familienfestival „Burning Sea“. 
+
 `
   },
 
   {
     title: '§6 Verbotene Gegenstände',
     content: `
-Verboten sind insbesondere:
-- Glasflaschen und Glasbehälter
-- Waffen jeglicher Art
-- Pyrotechnik, Fackeln, Feuerwerkskörper
-- Drohnen
-- Tiere
-- politische, religiöse oder kommerzielle Werbemittel
-- sonstige gefährliche Gegenstände
+a. Der Veranstalter ist berechtigt, Taschen- und Gepäckkontrollen durchzuführen. Der Zutritt kann  verweigert werden, wenn verbotene Gegenstände mitgeführt werden. 
 
-Der Veranstalter ist berechtigt, verbotene Gegenstände einzuziehen oder die Mitnahme zu verweigern.
+b. Verboten sind insbesondere: Glasflaschen und -behälter, Tiere, Waffen jeglicher Art, Fackeln,  Pyrotechnik, Trockeneis, Wunderkerzen, Himmelslaternen, Drohnen samt Steuerung, Vuvuzelas,  Megafone, politische, religiöse oder kommerzielle Werbemittel, Banner, Symbole, Flugblätter sowie  alle Gegenstände, die eine Gefahr darstellen. 
+
+c. Der Veranstalter darf verbotene Gegenstände vorübergehend einziehen oder verwahren. 
+
 `
   },
 
   {
     title: '§7 Hausrecht',
     content: `
-Das Hausrecht wird durch den Veranstalter und das beauftragte Personal ausgeübt.
+a. Das Hausrecht übt der Veranstalter bzw. das beauftragte Personal aus. Besucher müssen den  Anweisungen des Personals unbedingt Folge leisten. Verboten sind unter anderem: i. Mitführen verbotener Gegenstände. 
 
-Besucher haben den Anweisungen des Personals Folge zu leisten.
+ii. Ausübung körperlicher Gewalt. 
 
-Bei Verstößen kann der Besucher vom Gelände verwiesen und mit einem Hausverbot belegt werden. Eine Rückerstattung des Ticketpreises erfolgt nicht.
+iii. Werfen von Gegenständen. 
+
+iv. Verrichten der Notdurft außerhalb von Toiletten. 
+
+v. Beschädigung oder Verschmutzung von Anlagen, Wänden oder Gegenständen. vi. Gewerblicher Handel oder Werbung ohne schriftliche Genehmigung. 
+
+vii. Betreten gesperrter Bereiche oder Klettern auf Bühnen, Traversenkonstruktionen usw. viii. Bild- und Tonaufnahmen entgegen Ziffer 8. 
+
+b. Bei Verstößen kann der Besucher vom Gelände verwiesen und mit einem Hausverbot belegt  werden. 
+
+c. In solchen Fällen behält das Ticket keine Gültigkeit; der Ticketpreis wird nicht erstattet. 
+
 `
   },
 
   {
-    title: '§8 Veranstaltungsabsage und Abbruch',
+    title: '§8 Veranstaltungsabsage, Ablauf und Abbruch',
     content: `
-a. Wird die Veranstaltung vor Beginn abgesagt, wird der Ticketpreis ohne Gebühren erstattet.
+a. Wird die Veranstaltung vor Beginn abgesagt, erstattet der Veranstalter den Ticketpreis ohne  Vorverkaufs- und Systemgebühren. 
 
-b. Die Veranstaltung findet grundsätzlich bei jeder Witterung statt.
+b. Die Veranstaltung findet grundsätzlich bei jeder Witterung statt. Muss sie aufgrund gefährlicher  Wetterlagen oder wegen höherer Gewalt (z. B. behördliche Anordnung, gerichtliche Entscheidung)  abgebrochen werden, besteht kein Anspruch auf Rückerstattung, sofern kein Vorsatz oder grobe  Fahrlässigkeit des Veranstalters vorliegt. 
 
-c. Bei Abbruch aufgrund höherer Gewalt besteht kein Anspruch auf Rückerstattung.
+c. Haftung für Folgeschäden durch Verschiebung oder Absage ist ausgeschlossen. d. Der Veranstalter hat keinen Einfluss auf Länge, Ablauf oder Inhalte der einzelnen Darbietungen und  übernimmt hierfür keine Haftung. 
 
-d. Programmänderungen oder der Ausfall einzelner Künstler berechtigen nicht zur Rückerstattung, solange der Gesamtcharakter der Veranstaltung erhalten bleibt.
+e. Programmänderungen, Ausfall einzelner Shows oder Künstler – einschließlich Headlinern – berechtigen nicht zur Rückerstattung, solange der Gesamtcharakter des Events erhalten bleibt.
+
+f. Verspätungen oder Änderungen einzelner Programmpunkte sind möglich und werden über die  Eventhomepage oder Social-Media-Kanäle bekanntgegeben. 
+
 `
   },
 
   {
     title: '§9 Gesundheitsgefahren durch Lautstärke',
     content: `
-Hohe Lautstärke kann zu Hörschäden führen.
+a. Dem Besucher ist bewusst, dass insbesondere vor den Bühnen erhöhte Lautstärke herrscht und  dadurch Gesundheitsrisiken wie Hörschäden entstehen können. 
+b. Der Veranstalter bemüht sich um geeignete technische Maßnahmen zur Reduzierung von Risiken,  empfiehlt jedoch ausdrücklich die Nutzung von Ohrstöpseln, besonders in Lautsprechernähe. c. Jeder Besucher ist selbst dafür verantwortlich, Aufenthaltsdauer und Position vor den Bühnen den  eigenen Hörgewohnheiten anzupassen. 
 
-Der Veranstalter empfiehlt ausdrücklich die Nutzung von Ohrstöpseln.
-
-Jeder Besucher ist selbst verantwortlich für seine Aufenthaltsdauer und Position vor den Bühnen.
 `
   },
 
   {
     title: '§10 Bild- und Tonaufnahmen',
     content: `
-a. Erlaubt sind nur Mobiltelefone mit Kamerafunktion.
+a. Auf dem Gelände sind nur Mobiltelefone mit Kamerafunktion erlaubt. Profi-Kameras (z. B.  Spiegelreflex), Geräte mit Zoomobjektiven oder Videofunktion sowie Audio-Recorder sind verboten.  Besuchern kann der Zutritt verweigert werden, wenn sie solche Geräte nicht abgeben möchten. Für  Verluste wird nur bei Vorsatz oder grober Fahrlässigkeit gehaftet. 
 
-b. Professionelle Kameras, Audio-Recorder oder Geräte mit Wechselobjektiven sind verboten.
+b. Alle kommerziellen Bild- und Tonrechte liegen beim Veranstalter. Aufnahmen oder Verbreitung  durch Unbefugte sind untersagt. 
 
-c. Der Veranstalter ist berechtigt, Bild- und Tonaufnahmen zu erstellen und zu verwerten.
+c. Der Veranstalter darf die Veranstaltung fotografieren, filmen, live streamen und Aufnahmen  verwerten. Auch Besucher können darauf erkennbar sein. Mit Betreten des Geländes willigen  Besucher unwiderruflich ein, dass ihr Bild und ihre Stimme ohne Vergütung, zeitlich und örtlich  unbeschränkt, in allen Medien genutzt werden dürfen. 
 
-Mit Betreten des Geländes willigt der Besucher unwiderruflich in die Nutzung seines Bildes und seiner Stimme ein.
 `
   },
 
   {
     title: '§11 Haftungsbeschränkungen',
     content: `
-Der Veranstalter haftet nur bei Vorsatz oder grober Fahrlässigkeit.
+a. Die Haftung des Veranstalters sowie seiner gesetzlichen Vertreter und Erfüllungsgehilfen für  Schäden oder vergebliche Aufwendungen ist ausgeschlossen, außer bei Verletzung wesentlicher  Vertragspflichten. In solchen Fällen ist die Haftung auf Vorsatz und grobe Fahrlässigkeit beschränkt. 
 
-Keine Haftung besteht für verlorene oder beschädigte Gegenstände.
+b. Unberührt bleiben Ansprüche wegen Schäden an Leben, Körper oder Gesundheit, nach dem  Produkthaftungsgesetz, wegen arglistiger Täuschung oder aufgrund übernommener Garantien. 
 
-Das Betreten des Geländes erfolgt auf eigene Gefahr.
+c. Die Einschränkungen gelten auch für die persönliche Haftung von Vertretern und  Erfüllungsgehilfen. 
+
+d. Der Veranstalter haftet nicht für verlorene oder beschädigte Gegenstände. Das Parken erfolgt auf  eigenes Risiko. 
+
+e. Teile des Geländes können uneben sein und Stolpergefahr verursachen. Mit dem Ticketkauf  erkennt der Besucher dieses Risiko an. 
+
 `
   },
 
   {
     title: '§12 Verbot des Mitbringens eigener Getränke und Speisen',
     content: `
-Das Mitbringen eigener Getränke und Speisen ist grundsätzlich untersagt.
+a. Grundsätzliches Verbot 
+Das Mitführen und Konsumieren von eigenen Getränken und Speisen jeglicher Art ist auf dem  gesamten Veranstaltungsgelände strikt untersagt. Dies umfasst insbesondere alkoholische und nicht alkoholische Getränke, Softdrinks, Energydrinks, Wasser, Glasbehälter, Dosen, Tetra-Paks,  Thermoskannen, Lunchboxen, Snackverpackungen sowie verderbliche Lebensmittel. b. Zweck des Verbots 
+Das Verbot dient dem Schutz der Besucher und der Aufrechterhaltung eines geordneten und sicheren  Veranstaltungsablaufs. Gründe hierfür sind u. a.: 
 
-Ausnahmen gelten nur:
-- aus medizinischen Gründen mit Nachweis
-- für Babys und Kleinkinder in angemessenem Umfang
+i. Sicherheitsrisiken durch Glasflaschen, Dosen oder ungeprüfte Behältnisse, 
 
-Unzulässig bleiben:
-- Glasbehälter
-- Alkohol
-- undurchsichtige oder manipulierte Behälter
+ii. Hygienevorgaben, 
 
-Beim Einlass finden Kontrollen statt. Bei Verstößen kann der Zutritt verweigert werden.
+iii. Kontrolle des Alkoholausschanks gemäß gesetzlichen Bestimmungen, 
+
+iv. Vermeidung von Schmuggel von Substanzen, die die Sicherheit gefährden könnten. c. Ausnahmen aus medizinischen Gründen 
+Aus gesundheitlichen Gründen dürfen Lebensmittel oder Getränke nur dann mitgeführt werden,  wenn 
+
+i. diese medizinisch zwingend erforderlich sind (z. B. bei Diabetes, Nahrungsmittelunverträglichkeiten, 
+Allergien, Stoffwechselerkrankungen) und 
+
+ii. ein geeigneter Nachweis vorgelegt wird, insbesondere: 
+– ärztliches Attest, 
+– Allergiepass, 
+– medizinische Bescheinigung, 
+
+iii. die Lebensmittel oder Getränke in kleinen, nicht-gefährlichen, transparenten Behältern mitgeführt  werden, 
+
+iv. diese ausschließlich für den persönlichen Eigenbedarf bestimmt sind. 
+Der Veranstalter kann die Mitnahme verweigern, wenn der Nachweis nicht ausreichend erscheint  oder Sicherheitsbedenken bestehen. 
+
+d. Ausnahmen für Kleinkinder und Säuglinge 
+Für Babys und Kleinkinder dürfen in einem angemessenen Umfang mitgeführt werden: i. Babynahrung (Breigläschen, Pulver, Quetschbeutel), 
+
+ii. Wasser oder geeignete Getränke in kunststoffbasierten Babyflaschen, 
+
+iii. Snacks für Kleinkinder. 
+Eine Mitnahme ist nur gestattet, wenn das Kind anwesend ist. Der Veranstalter kann unangemessene  Mengen zurückweisen. 
+
+e. Verbote trotz Ausnahmegründen 
+Unzulässig bleibt in jedem Fall das Mitbringen von: 
+
+i. Glasbehältern jeglicher Art, 
+
+ii. alkoholischen Getränken, 
+
+iii. selbstgebrauten oder geöffneten Flüssigkeiten, 
+
+iv. Flüssigkeiten in undurchsichtigen oder manipulationsanfälligen Behältern, 
+
+v. Lebensmitteln, die ein Gesundheitsrisiko darstellen können (leicht verderbliche, ungekennzeichnete  oder unverpackte Waren). 
+
+f. Kontrollen beim Einlass 
+Beim Zutritt finden Taschen- und Personen-Kontrollen statt. Das Sicherheitspersonal ist berechtigt,  jegliche mitgeführte Speisen oder Getränke unabhängig von der Art einzuziehen oder die Mitnahme  zu untersagen. 
+
+g. Verhalten bei Verstößen 
+
+i. Besuchern, die trotz Verbots Speisen oder Getränke mitführen, kann der Zutritt verweigert werden. ii. Befindet sich der Besucher bereits auf dem Gelände, kann er des Geländes verwiesen werden. iii. Eine Erstattung des Ticketpreises erfolgt in diesen Fällen nicht. 
+
+iv. Der Veranstalter kann eingezogene Gegenstände entsorgen; ein Anspruch auf Rückgabe besteht  nicht. 
+
+h. Mitgebrachte Gegenstände zur späteren Abholung 
+Eine Verwahrung verbotener Speisen und Getränke durch den Veranstalter oder das  Sicherheitspersonal erfolgt grundsätzlich nicht. Der Veranstalter übernimmt keinerlei Haftung für  Gegenstände, die der Besucher außerhalb des Einlassbereichs zurücklassen musste. i. Gastronomisches Angebot des Veranstalters 
+Zur Versorgung der Besucher stehen ausreichend Verkaufsstände mit diversen Getränken und Speisen  zur Verfügung. Der Veranstalter übernimmt keine Garantie für bestimmte Produkte,  Lebensmittelarten oder Verfügbarkeit. 
+
+j. Sicherheitsvorbehalt 
+Der Veranstalter behält sich das Recht vor, das Mitbringen bestimmter Behältnisse oder Lebensmittel  auch über diese Regelung hinaus zu untersagen oder weitere Einschränkungen zu erlassen, sofern  dies aus Sicherheits-, Gesundheits- oder Organisationsgründen erforderlich erscheint. 
+
 `
   },
 
   {
     title: 'Umgang mit Fundsachen',
     content: `
-Gefundene Gegenstände sind unverzüglich beim Personal abzugeben.
+a. Abgabe von gefundenen Gegenständen 
+Besucher sind verpflichtet, auf dem Veranstaltungsgelände gefundene Gegenstände unverzüglich  beim Veranstalter, beim Sicherheitspersonal oder an der offiziellen Fundstelle abzugeben. Eine 
+eigenmächtige Aneignung gefundener Gegenstände ist verboten und kann strafrechtliche  Konsequenzen haben. 
 
-Nicht abgeholte Fundsachen werden nach Veranstaltungsende an das zuständige Fundbüro übergeben.
+b. Verhalten bei Fund von gefährlichen oder sicherheitsrelevanten Gegenständen Werden Gegenstände gefunden, die eine potenzielle Gefahr darstellen könnten (z. B. Waffen, Drogen,  verdächtige Pakete, Pyrotechnik), ist unverzüglich das Sicherheitspersonal zu informieren. In solchen  Fällen dürfen die Gegenstände nicht eigenständig berührt oder transportiert werden. 
 
-Der Veranstalter übernimmt keine Haftung für Fundsachen.
+c. Dokumentation durch den Veranstalter 
+Der Veranstalter dokumentiert abgegebene Fundsachen, soweit dies organisatorisch möglich ist, und  bewahrt sie nach gesetzlichen Vorgaben auf. Eine sofortige Bearbeitung oder Registrierung während  der laufenden Veranstaltung kann aus organisatorischen Gründen eingeschränkt sein. 
+
+d. Aufbewahrung während der Veranstaltung 
+Während der Veranstaltungsdauer werden Fundsachen an einer zentralen Fundstelle oder beim  Sicherheitsteam verwahrt. Da die Sicherheit und Funktionalität des Veranstaltungsgeschehens  Vorrang hat, kann keine durchgängige Erreichbarkeit garantiert werden. 
+
+e. Herausgabe von Fundsachen an ihre Eigentümer 
+Die Rückgabe von Fundsachen erfolgt nur nach eindeutigem Eigentumsnachweis. Als Nachweise  gelten unter anderem: 
+
+i. detaillierte Beschreibung des Gegenstands, 
+
+ii. Besitznachweise (z. B. Kaufbelege, Seriennummern, Fotos), 
+
+iii. Ausweisdokumente zur Identitätsbestätigung. 
+
+f. Wertvolle Gegenstände 
+Wertgegenstände wie Smartphones, Geldbörsen, Schlüssel, Schmuck oder technische Geräte werden  nach Möglichkeit separat und besonders gesichert aufbewahrt. Der Veranstalter übernimmt jedoch  keine Haftung für Verlust, Beschädigung oder Diebstahl von Fundsachen (siehe Haftungsregelungen  der AGB). 
+
+g. Nicht abgeholte Fundsachen nach Veranstaltungsende 
+Nach Abschluss der Veranstaltung werden verbleibende Fundsachen gemäß den gesetzlichen  Bestimmungen an das zuständige örtliche Fundbüro weitergeleitet. Ort und Zeitpunkt der Übergabe  variieren je nach Veranstaltungsort. 
+
+h. Ausschluss von Haftung 
+Der Veranstalter haftet weder für den Verlust persönlicher Gegenstände noch für Beschädigungen an  Fundsachen. Ebenfalls ausgeschlossen ist eine Haftung für Gegenstände, die vom Besucher außerhalb  des Geländes abgelegt oder deponiert wurden. 
+
+i. Aufbewahrungsfristen 
+Die gesetzlichen Aufbewahrungs- und Eigentumsübertragungsfristen richten sich nach dem  Bürgerlichen Gesetzbuch (BGB). Ansprüche des ursprünglichen Eigentümers können nur innerhalb  der gesetzlichen Fristen geltend gemacht werden. 
+
+j. Besondere Einschränkungen für verderbliche oder gefährliche Gegenstände Der Veranstalter ist berechtigt, verderbliche, unhygienische oder gefährliche Gegenstände sofort und  ohne Benachrichtigung zu entsorgen. Ein Anspruch auf Wiederaushändigung oder Entschädigung  besteht nicht. 
+
+k. Abgabe von behördlich relevanten Funden 
+Bei Fundsachen, die strafrechtlich relevant sind (z. B. Betäubungsmittel, Waffen), erfolgt die  unverzügliche Übergabe an die zuständige Polizeibehörde. Eine Herausgabe an Besucher ist  ausgeschlossen. 
+
 `
   },
 
   {
-    title: 'Tiere',
+    title: 'Tiere auf dem Veranstaltungsgelände (erweitert & detailliert) ',
     content: `
-Das Mitführen von Tieren ist untersagt.
+a. Grundsätzliches Verbot 
+Das Mitführen von Tieren jeglicher Art ist auf dem gesamten Veranstaltungsgelände strikt untersagt.  Dies umfasst insbesondere Hunde, Katzen, Nagetiere, Vögel, Reptilien, Nutztiere sowie exotische oder  potenziell gefährliche Tiere. Das Verbot gilt unabhängig davon, ob die Tiere angeleint, in  Transportboxen oder in sonstigen Behältnissen mitgeführt werden. 
 
-Ausgenommen sind gesetzlich anerkannte Assistenzhunde mit gültigem Nachweis.
+i. Lärm- und Stressbelastung durch hohe Lautstärke, Menschenmengen und Licht-/Pyroeffekte,
 
-Der Veranstalter behält sich aus Sicherheits- und Tierschutzgründen weitere Einschränkungen vor.
+ii. Gefährdung anderer Besucher durch unvorhersehbares Tierverhalten, 
+
+iii. hygienische Anforderungen des Veranstaltungsgeländes, 
+
+iv. Unfall- und Stolpergefahren, 
+
+v. mögliche Allergierisiken für andere Besucher. 
+
+b. Ausnahme für Assistenzhunde 
+Das Verbot gilt nicht für gesetzlich anerkannte Assistenzhunde (z. B. Blindenführhunde, medizinische  Signalhunde, PTBS-Assistenzhunde), sofern folgende Voraussetzungen erfüllt sind: i. Der Hund ist eindeutig als Assistenzhund gekennzeichnet (z. B. durch Kenndecke, Geschirr,  Ausweis). 
+
+ii. Ein offizieller Assistenzhund-Ausweis oder ein vergleichbarer Nachweis wird auf Nachfrage  vorgelegt. 
+
+iii. Der Hund ist gut erzogen, unter Kontrolle des Halters und stellt keine Gefahr dar. iv. Der Hund darf und kann die Veranstaltung unter den gegebenen Umständen sicher begleiten. Der Veranstalter behält sich das Recht vor, die Mitnahme eines Assistenzhundes zu untersagen, wenn  objektive Sicherheits- oder Tierschutzbedenken bestehen (z. B. extreme Lautstärke). c. Ausschluss nicht anerkannter Tiere 
+Therapiehunde, emotional-support Animal oder privat ausgebildete Begleithunde gelten nicht automatisch als Assistenzhunde im rechtlichen Sinne. Für diese Tiere besteht weiterhin ein  Mitnahmeverbot. 
+
+d. Haftung des Tierhalters 
+Der Halter haftet für sämtliche Schäden oder Störungen, die durch ein mitgebrachtes Tier verursacht  werden, einschließlich Schäden an Personen, Sachen oder Veranstaltungstechnik. e. Tierschutz und Fürsorgepflicht 
+Da die Lautstärke, Menschenmenge und Lichtverhältnisse erfahrungsgemäß eine erhebliche  Stressbelastung für Tiere darstellen, rät der Veranstalter ausdrücklich von der Mitnahme jeglicher  Tiere ab – auch in Fällen, in denen die Mitnahme theoretisch zulässig wäre. 
+
+f. Sicherheitsvorbehalt 
+Der Veranstalter ist befugt, zusätzliche Einschränkungen zu erlassen oder bestehende Regeln  anzupassen, sofern dies aus Sicherheits- oder Tierschutzgründen erforderlich erscheint.
+
 `
   }
 ];

@@ -105,44 +105,71 @@ export const CountdownSection = () => {
 };
 
 // ==========================
-// Artist Flip Card
+// Artist Flip Card (FIXED)
+// - Tap to flip (mobile)
+// - Hover to flip (desktop still works)
+// - Long text scrolls inside .flip-scroll
 // ==========================
-const ArtistFlipCard = ({ artist }) => (
-  <div className="flip-card h-[350px] sm:h-[400px] md:h-[450px] stagger-item">
-    <div className="flip-card-inner">
-      <div className="flip-card-front bg-gradient-to-br from-[#1a1a1a] to-[#141414] border border-white/10">
-        <img src={artist.image} alt={artist.name} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <h3 className="text-xl sm:text-2xl font-bold text-white font-bebas tracking-wider">
+const ArtistFlipCard = ({ artist }) => {
+  const [flipped, setFlipped] = useState(false);
+
+  return (
+    <div
+      className="flip-card h-[350px] sm:h-[400px] md:h-[450px] stagger-item select-none"
+      role="button"
+      tabIndex={0}
+      onClick={() => setFlipped((v) => !v)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') setFlipped((v) => !v);
+      }}
+    >
+      <div className={`flip-card-inner ${flipped ? 'is-flipped' : ''}`}>
+        <div className="flip-card-front bg-gradient-to-br from-[#1a1a1a] to-[#141414] border border-white/10">
+          <img src={artist.image} alt={artist.name} className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
+
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-white font-bebas tracking-wider">
+              {artist.name}
+            </h3>
+            <p className="text-sm text-[#d40e7b] font-medium">{artist.genre}</p>
+          </div>
+
+          <div className="absolute top-3 right-3 opacity-70">
+            <Disc3 className="w-6 h-6 text-[#9621ff] animate-rotate-slow" />
+          </div>
+        </div>
+
+        {/* BACK */}
+        <div className="flip-card-back bg-gradient-to-br from-[#d40e7b] to-[#9621ff] border border-white/20 p-5 flex flex-col text-center">
+          <div className="p-3 rounded-full bg-white/20 mb-4 mx-auto">
+            <Music className="w-8 h-8 text-white" />
+          </div>
+
+          <h3 className="text-2xl font-bold text-white font-bebas tracking-wider mb-2">
             {artist.name}
           </h3>
-          <p className="text-sm text-[#d40e7b] font-medium">{artist.genre}</p>
-        </div>
-        <div className="absolute top-3 right-3 opacity-70">
-          <Disc3 className="w-6 h-6 text-[#9621ff] animate-rotate-slow" />
-        </div>
-      </div>
 
-      <div className="flip-card-back bg-gradient-to-br from-[#d40e7b] to-[#9621ff] border border-white/20 p-5 flex flex-col justify-center items-center text-center">
-        <div className="p-3 rounded-full bg-white/20 mb-4">
-          <Music className="w-8 h-8 text-white" />
-        </div>
-        <h3 className="text-2xl font-bold text-white font-bebas tracking-wider mb-2">
-          {artist.name}
-        </h3>
-        <p className="text-white/80 text-sm font-medium mb-4">{artist.genre}</p>
-        <p className="text-white/90 text-sm leading-relaxed mb-4">{artist.description}</p>
-        <div className="mt-auto pt-4 border-t border-white/20 w-full">
-          <div className="flex items-center justify-center gap-2">
-            <Sparkles className="w-4 h-4 text-[#ffdb00]" />
-            <span className="text-white/90 text-xs">{artist.funFact}</span>
+          <p className="text-white/80 text-sm font-medium mb-3">{artist.genre}</p>
+
+          {/* Scroll zone for long text */}
+          <div className="flip-scroll flex-1">
+            <p className="text-white/90 text-sm leading-relaxed">
+              {artist.description}
+            </p>
+          </div>
+
+          <div className="mt-4 pt-4 border-t border-white/20 w-full">
+            <div className="flex items-center justify-center gap-2">
+              <Sparkles className="w-4 h-4 text-[#ffdb00]" />
+              <span className="text-white/90 text-xs">{artist.funFact}</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 // ==========================
 // LineUp Section
@@ -180,7 +207,7 @@ export const LineUpSection = () => {
           </h2>
 
           <p className="text-gray-400 text-sm md:text-lg mt-3 md:mt-4 max-w-2xl mx-auto px-4 stagger-item">
-            Die besten DJs und Künstler auf einer Bühne - Hover über die Karten für mehr Infos!
+            Die besten DJs und Künstler auf einer Bühne - Tippe auf die Karten für mehr Infos!
           </p>
         </div>
 

@@ -2,6 +2,7 @@
   font-family: 'Bebas Neue', sans-serif;
 }
 
+
 /* Ensure video covers full hero */
 #hero video {
   position: absolute;
@@ -14,6 +15,7 @@
   transform: translate(-50%, -50%);
 }
 
+
 /* Line clamp utility */
 .line-clamp-2 {
   display: -webkit-box;
@@ -22,10 +24,12 @@
   overflow: hidden;
 }
 
+
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
 }
+
 
 /* Selection color */
 ::selection {
@@ -33,16 +37,19 @@ html {
   color: white;
 }
 
+
 /* Focus states */
 :focus-visible {
   outline: 2px solid #FF6B00;
   outline-offset: 2px;
 }
 
+
 /* Button hover states - ensure no blue/purple defaults */
 button:focus {
   outline: none;
 }
+
 
 /* Carousel styling overrides */
 .embla__container {
@@ -54,6 +61,7 @@ button:focus {
   min-width: 0;
 }
 
+
 /* Animation delays */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
@@ -61,6 +69,7 @@ button:focus {
 .delay-500 { animation-delay: 500ms; }
 .delay-700 { animation-delay: 700ms; }
 .delay-1000 { animation-delay: 1000ms; }
+
 
 /* Hover card lift effect */
 .hover-lift {
@@ -71,6 +80,7 @@ button:focus {
   transform: translateY(-4px);
   box-shadow: 0 20px 40px rgba(255, 107, 0, 0.15);
 }
+
 
 /* Gradient text animation */
 @keyframes gradient-text {
@@ -87,12 +97,14 @@ button:focus {
   animation: gradient-text 3s ease infinite;
 }
 
+
 /* Responsive typography */
 @media (max-width: 640px) {
   .font-bebas {
     letter-spacing: 0.02em;
   }
 }
+
 
 /* Custom scrollbar for modals */
 .custom-scrollbar::-webkit-scrollbar {
@@ -114,9 +126,84 @@ button:focus {
 }
 
 
+
 /* Animacija loga: slide-in + float + glow */
 .logo-animate {
   animation: slide-in-up-logo 0.6s ease-out forwards,
              float-logo 3s ease-in-out infinite,
              glow-logo 2s ease-in-out infinite;
+}
+
+
+/* ================================
+   FLIP CARD FIX (Mobile + Long text)
+   ================================ */
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+/* Desktop hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Mobile tap (JS) */
+.flip-card .flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* Both faces */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  /* avoid render glitches */
+  transform: translateZ(0);
+}
+
+/* Back face */
+.flip-card-back {
+  transform: rotateY(180deg) translateZ(0);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Long content scroll */
+.flip-card-back .flip-scroll {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-right: 6px;
+}
+
+/* scrollbar inside flip */
+.flip-card-back .flip-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.flip-card-back .flip-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+}
+
+/* Mobile readability */
+@media (max-width: 640px) {
+  .flip-card-back .flip-scroll {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
 }

@@ -1,7 +1,13 @@
 import React from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
+} from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { impressumData, datenschutzData, agbData } from '@/data/mock';
+import { impressumData, datenschutzData } from '@/data/mock';
 import { Scale, Shield, Building2, Phone, Mail, User, FileText } from 'lucide-react';
 
 export const ImpressumOverlay = ({ open, onClose }) => {
@@ -10,7 +16,7 @@ export const ImpressumOverlay = ({ open, onClose }) => {
       <DialogContent className="sm:max-w-[700px] max-h-[85vh] bg-[#141414] border border-white/20 p-0">
         <div className="relative overflow-hidden bg-gradient-to-r from-[#d40e7b]/20 to-[#9621ff]/10 p-6 border-b border-white/10">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#d40e7b]/10 rounded-full blur-3xl"></div>
-          
+
           <DialogHeader className="relative z-10">
             <DialogTitle className="text-3xl font-bold flex items-center gap-3 text-white font-bebas tracking-wider">
               <Scale className="w-8 h-8 text-[#d40e7b]" />
@@ -61,7 +67,9 @@ export const ImpressumOverlay = ({ open, onClose }) => {
                 <h3 className="font-semibold">Verantwortlich</h3>
               </div>
               <div className="space-y-2 text-gray-300">
-                <p><span className="text-gray-500">Geschäftsführer:</span> {impressumData.ceo}</p>
+                <p>
+                  <span className="text-gray-500">Geschäftsführer:</span> {impressumData.ceo}
+                </p>
               </div>
             </div>
 
@@ -73,7 +81,9 @@ export const ImpressumOverlay = ({ open, onClose }) => {
               </div>
               <div className="space-y-2 text-gray-300">
                 <p>{impressumData.register}</p>
-                <p><span className="text-gray-500">USt-IdNr:</span> {impressumData.vatId}</p>
+                <p>
+                  <span className="text-gray-500">USt-IdNr:</span> {impressumData.vatId}
+                </p>
               </div>
             </div>
 
@@ -81,7 +91,9 @@ export const ImpressumOverlay = ({ open, onClose }) => {
             {impressumData.additionalSections.map((section, index) => (
               <div key={index} className="p-5 rounded-xl bg-white/5 border border-white/10 space-y-3">
                 <h3 className="text-lg font-semibold text-white">{section.title}</h3>
-                <p className="text-gray-400 leading-relaxed whitespace-pre-line">{section.content}</p>
+                <p className="text-gray-400 leading-relaxed whitespace-pre-line">
+                  {section.content}
+                </p>
               </div>
             ))}
           </div>
@@ -97,7 +109,7 @@ export const DatenschutzOverlay = ({ open, onClose }) => {
       <DialogContent className="sm:max-w-[700px] max-h-[85vh] bg-[#141414] border border-white/20 p-0">
         <div className="relative overflow-hidden bg-gradient-to-r from-[#9621ff]/20 to-[#d40e7b]/10 p-6 border-b border-white/10">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#9621ff]/10 rounded-full blur-3xl"></div>
-          
+
           <DialogHeader className="relative z-10">
             <DialogTitle className="text-3xl font-bold flex items-center gap-3 text-white font-bebas tracking-wider">
               <Shield className="w-8 h-8 text-[#9621ff]" />
@@ -112,7 +124,7 @@ export const DatenschutzOverlay = ({ open, onClose }) => {
         <ScrollArea className="h-[60vh] p-6">
           <div className="space-y-6">
             {datenschutzData.sections.map((section, index) => (
-              <div 
+              <div
                 key={index}
                 className="p-5 rounded-xl bg-white/5 border border-white/10 space-y-3 hover:bg-white/[0.07] transition-colors"
               >
@@ -139,7 +151,6 @@ export const DatenschutzOverlay = ({ open, onClose }) => {
   );
 };
 
-
 export const AgbOverlay = ({ open, onClose, agbData }) => {
   return (
     <Dialog open={open} onOpenChange={onClose}>
@@ -160,9 +171,16 @@ export const AgbOverlay = ({ open, onClose, agbData }) => {
         <ScrollArea className="h-[60vh] p-6">
           <div className="space-y-6">
             {agbData.map((section, index) => (
-              <div key={index} className="p-5 rounded-xl bg-white/5 border border-white/10 space-y-3 hover:bg-white/[0.07] transition-colors">
+              <div
+                key={index}
+                className="p-5 rounded-xl bg-white/5 border border-white/10 space-y-3 hover:bg-white/[0.07] transition-colors"
+              >
                 <h3 className="text-lg font-semibold text-white">{section.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{section.content}</p>
+
+                {/* IMPORTANT: preserve line breaks + spacing */}
+                <div className="text-gray-400 leading-relaxed whitespace-pre-wrap break-words">
+                  {section.content}
+                </div>
               </div>
             ))}
           </div>
@@ -171,7 +189,5 @@ export const AgbOverlay = ({ open, onClose, agbData }) => {
     </Dialog>
   );
 };
-
-
 
 export default ImpressumOverlay;

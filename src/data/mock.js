@@ -17,6 +17,18 @@ export const socialLinks = {
 
 export const artists = [
   {
+  id: 0,
+  name: "Miss Chantall",
+  genre: "Moderatorin",
+  image: `${process.env.PUBLIC_URL}/miss-chantall.png`,
+  description:
+    "Miss Chantall moderiert die komplette Show und führt euch mit Humor, Energie und Mallorca-Vibes durch den Tag.",
+  funFact: "Moderatorin der Show.",
+  highlight: true
+},
+
+  
+  {
     id: 1,
     name: "DJ Set Marc Rixx",
     genre: "",
@@ -84,8 +96,41 @@ export const artists = [
 
     description: "Zwischen dem Rauschen der Wellen, flirrenden Lichtern und dieser besonderen Mischung aus Freiheit, Leichtigkeit und Sommergefühl. Laut Stefan Stürmer hat der liebe Gott uns eine Insel geschenkt. Du fühlst, du bist gekommen um zu bleiben.",
     funFact: "Mit „Eine Meile“ präsentiert Stefan Stürmer einen Song, der das Lebensgefühl an der Mallorca-Promenade einfängt."
+  },
+
+  {
+  id: 9,
+  name: "ELIAH",
+  genre: "",
+  image: `${process.env.PUBLIC_URL}/9.png`,
+  description: "Eliah bringt Mallorca-Party pur auf die Bühne – mit Mitsing-Hits, Energie und einer Show, die sofort zündet.",
+  funFact: "Wenn Eliah loslegt, ist Eskalation vorprogrammiert. "
+}
+];
+
+export const newcomers = [
+  {
+    id: 101,
+    name: "Malle Willi",
+    genre: "Newcomer",
+    image: `${process.env.PUBLIC_URL}/willie.jpg`,
+    description:
+      "Newcomer-Act mit frischen Mallorca-Vibes und echter Live-Energie. Supporte die nächste Generation auf unserer Bühne!",
+    funFact: "Newcomer-Förderung: Neue Sounds brauchen eine Bühne.",
+    big: true
+  },
+  {
+    id: 102,
+    name: "Isa Bella",
+    genre: "Newcomer",
+    image: `${process.env.PUBLIC_URL}/newcomer-placeholder.jpg`, // dok ne dođu press slike
+    description:
+      "Newcomer-Act (Pressebilder folgen)",
+    funFact: "Pressebilder folgen.",
+    big: true
   }
 ];
+
 
 export const tickets = [
   {
@@ -214,14 +259,12 @@ export const faqData = [
 ];
 
 export const vorverkaufsstellen = [
-  { id: 1, name: "Ticket Center Zeulenroda", address: "Marktplatz 5, 07937 Zeulenroda", plz: "07937" },
-  { id: 2, name: "Reisebüro Sonnenschein", address: "Hauptstraße 12, 07937 Zeulenroda", plz: "07937" },
-  { id: 3, name: "Tourist Info Greiz", address: "Burgplatz 1, 07973 Greiz", plz: "07973" },
-  { id: 4, name: "Ticket Shop Gera", address: "Sorge 5, 07545 Gera", plz: "07545" },
-  { id: 5, name: "Event Store Plauen", address: "Postplatz 2, 08523 Plauen", plz: "08523" },
-  { id: 6, name: "Touristinfo Schleiz", address: "Neumarkt 2, 07907 Schleiz", plz: "07907" },
-  { id: 7, name: "Buchhandlung Jena", address: "Markt 16, 07743 Jena", plz: "07743" },
-  { id: 8, name: "Ticket Point Saalfeld", address: "Markt 6, 07318 Saalfeld", plz: "07318" }
+  { id: 1, name: "Tourismuszentrum Zeulenrodaer Meer", address: "Bleichenweg 30, 07937 Zeulenroda-Triebes", plz: "07937" },
+  { id: 2, name: "Bio Seehotel Zeulenroda", address: "Bauerfeindallee 1, 07937 Zeulenroda-Triebes", plz: "07937" },
+  { id: 3, name: "Ev. Kirchgemeinde Zeulenroda (Pfarrbüro)", address: "Kirchstraße 17, 07937 Zeulenroda-Triebes", plz: "07937" },
+  { id: 4, name: "TUI TRAVELStar Reisebüro am Stadtbrunnen", address: "Schleizer Straße 10–12, 07937 Zeulenroda-Triebes", plz: "07937" },
+  { id: 5, name: "Tourist Information Erfurt", address: "Benediktsplatz 1, 99084 Erfurt", plz: "99084" },
+  { id: 6, name: "Gera Information", address: "Am Markt 1a, 07545, Gera", plz: "07545" }
 ];
 
 export const schedule = {

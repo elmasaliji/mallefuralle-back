@@ -23,6 +23,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { VVKSection } from './components/VVKSection';
 import { MerchSection, InfoSection } from './components/InfoSections';
+import PartnerSection from './components/PartnerSection';
 
 /* TikTok icon – custom (lucide nema dobar) */
 const TikTokIcon = ({ className }) => (
@@ -91,6 +92,10 @@ const Navigation = ({ onOpenTickets }) => {
     { id: 'lineup', label: 'Line Up', icon: Music2 },
     { id: 'vvk', label: 'VVK', icon: MapPin },
     { id: 'faq', label: 'FAQ', icon: HelpCircle },
+
+    // NEW: Partners after FAQ
+    { id: 'partners', label: 'Partners', icon: MapPin },
+
     { id: 'contact', label: 'Kontakt', icon: MessageCircle }
   ];
 
@@ -182,9 +187,7 @@ const StickyTicketButton = ({ onOpenTickets }) => (
     style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
   >
     <Ticket className="w-5 h-5 rotate-90 group-hover:rotate-[100deg] transition-transform" />
-    <span className="text-sm uppercase tracking-widest font-bebas">
-      Ticket Kaufen
-    </span>
+    <span className="text-sm uppercase tracking-widest font-bebas">Ticket Kaufen</span>
   </button>
 );
 
@@ -209,7 +212,9 @@ const HeroSection = ({ onOpenTickets }) => (
           onClick={() => window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => e.key === 'Enter' && window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')}
+          onKeyDown={(e) =>
+            e.key === 'Enter' && window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')
+          }
           aria-label="Instagram"
         >
           <Instagram />
@@ -220,7 +225,9 @@ const HeroSection = ({ onOpenTickets }) => (
           onClick={() => window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => e.key === 'Enter' && window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')}
+          onKeyDown={(e) =>
+            e.key === 'Enter' && window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')
+          }
           aria-label="TikTok"
         >
           <TikTokIcon />
@@ -267,7 +274,9 @@ const HeroSection = ({ onOpenTickets }) => (
             onClick={() => window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')}
             role="button"
             tabIndex={0}
-            onKeyDown={(e) => e.key === 'Enter' && window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')}
+            onKeyDown={(e) =>
+              e.key === 'Enter' && window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')
+            }
             aria-label="Instagram"
           >
             <Instagram />
@@ -278,7 +287,9 @@ const HeroSection = ({ onOpenTickets }) => (
             onClick={() => window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')}
             role="button"
             tabIndex={0}
-            onKeyDown={(e) => e.key === 'Enter' && window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')}
+            onKeyDown={(e) =>
+              e.key === 'Enter' && window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')
+            }
             aria-label="TikTok"
           >
             <TikTokIcon />
@@ -320,6 +331,7 @@ function App() {
         <VVKSection />
         <MerchSection />
         <FAQSection />
+        <PartnerSection />
         <ContactSection />
       </main>
 

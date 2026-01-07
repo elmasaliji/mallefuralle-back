@@ -24,10 +24,10 @@ import { Footer } from './components/Footer';
 import { VVKSection } from './components/VVKSection';
 import { MerchSection, InfoSection } from './components/InfoSections';
 
-// TikTok Icon
+/* TikTok icon – custom (lucide nema dobar) */
 const TikTokIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    <path d="M12.5 2h2c.2 2.2 1.7 4.1 4 4.4v2c-1.5-.1-2.9-.6-4-1.4V15a5 5 0 1 1-5-5c.3 0 .7 0 1 .1v2.1a2.9 2.9 0 1 0 2 2.8V2z" />
   </svg>
 );
 
@@ -107,7 +107,11 @@ const Navigation = ({ onOpenTickets }) => {
           className="flex items-center gap-2 md:gap-3 cursor-pointer h-16"
           onClick={() => scrollToSection('hero')}
         >
-          <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" className="h-full w-auto object-contain" />
+          <img
+            src={`${process.env.PUBLIC_URL}/logo.png`}
+            alt="Logo"
+            className="h-full w-auto object-contain"
+          />
           <span className="text-lg sm:text-xl md:text-2xl font-bold text-gradient-logo font-bebas tracking-wider leading-none mt-[1px]">
             MALLE FÜR ALLE
           </span>
@@ -130,7 +134,11 @@ const Navigation = ({ onOpenTickets }) => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-white" />
+            ) : (
+              <Menu className="w-6 h-6 text-white" />
+            )}
           </button>
         </div>
       </div>
@@ -174,14 +182,51 @@ const StickyTicketButton = ({ onOpenTickets }) => (
     style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
   >
     <Ticket className="w-5 h-5 rotate-90 group-hover:rotate-[100deg] transition-transform" />
-    <span className="text-sm uppercase tracking-widest font-bebas">Ticket Kaufen</span>
+    <span className="text-sm uppercase tracking-widest font-bebas">
+      Ticket Kaufen
+    </span>
   </button>
 );
 
 // Hero Section
 const HeroSection = ({ onOpenTickets }) => (
-  <section id="hero" className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+  <section
+    id="hero"
+    className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden"
+  >
+    {/* Video iz public foldera */}
+    <div className="absolute inset-0 z-0 pointer-events-none">
+      <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+        <source src={`${process.env.PUBLIC_URL}/video.mp4`} type="video/mp4" />
+      </video>
+    </div>
+
     <div className="relative z-10 container mx-auto px-4 md:px-6 text-center pt-24">
+      {/* DESKTOP SOCIAL ICONS (left) */}
+      <div className="social-icons desktop">
+        <div
+          className="social-icon"
+          onClick={() => window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')}
+          aria-label="Instagram"
+        >
+          <Instagram />
+        </div>
+
+        <div
+          className="social-icon"
+          onClick={() => window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')}
+          aria-label="TikTok"
+        >
+          <TikTokIcon />
+        </div>
+      </div>
+
       <div className="max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-[#d40e7b]/20 to-[#9621ff]/20 backdrop-blur-sm rounded-full border border-[#d40e7b]/30 mb-6 md:mb-8 animate-bounce-soft">
           <span className="w-2 h-2 rounded-full bg-[#d40e7b] animate-pulse"></span>
@@ -191,34 +236,56 @@ const HeroSection = ({ onOpenTickets }) => (
         </div>
 
         <div className="flex justify-center mb-4 md:mb-6">
-          <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Logo" className="w-64 md:w-96 lg:w-[500px] object-contain logo-animate" />
+          <img
+            src={`${process.env.PUBLIC_URL}/logo.png`}
+            alt="Logo"
+            className="w-64 md:w-96 lg:w-[500px] object-contain logo-animate"
+          />
         </div>
 
-        <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 md:mb-10 animate-slide-in-up px-4" style={{ animationDelay: '0.2s' }}>
+        <p
+          className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 md:mb-10 animate-slide-in-up px-4"
+          style={{ animationDelay: '0.2s' }}
+        >
           {eventData.tagline}
         </p>
 
         <div className="animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
-          <Button onClick={onOpenTickets} className="malle-btn px-6 py-5 md:px-10 md:py-7 text-base md:text-xl font-bold rounded-xl md:rounded-2xl animate-pulse-glow group">
+          <Button
+            onClick={onOpenTickets}
+            className="malle-btn px-6 py-5 md:px-10 md:py-7 text-base md:text-xl font-bold rounded-xl md:rounded-2xl animate-pulse-glow group"
+          >
             <Ticket className="w-5 h-5 md:w-6 md:h-6 mr-2 md:mr-3 group-hover:rotate-12 transition-transform" />
             TICKET KAUFEN
           </Button>
         </div>
+
+        {/* MOBILE SOCIAL ICONS (below CTA) */}
+        <div className="social-icons mobile">
+          <div
+            className="social-icon"
+            onClick={() => window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && window.open(socialLinks?.instagram || 'https://instagram.com', '_blank')}
+            aria-label="Instagram"
+          >
+            <Instagram />
+          </div>
+
+          <div
+            className="social-icon"
+            onClick={() => window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && window.open(socialLinks?.tiktok || 'https://tiktok.com', '_blank')}
+            aria-label="TikTok"
+          >
+            <TikTokIcon />
+          </div>
+        </div>
       </div>
     </div>
-
-    {/* VIDEO iz public foldera */}
-    <div className="fixed inset-0 z-0 pointer-events-none">
-      <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-        <source src={`${process.env.PUBLIC_URL}/video.mp4`} type="video/mp4" />
-      </video>
-    </div>
-
-    {/* Background overlay */}
-    <div className="fixed inset-0 z-10 pointer-events-none">
-      <img src={`${process.env.PUBLIC_URL}/background.png`} alt="" className="w-full h-full object-cover opacity-75" />
-    </div>
-    <div className="noise-overlay"></div>
   </section>
 );
 
@@ -231,7 +298,15 @@ function App() {
   useScrollAnimation();
 
   return (
-    <div className="min-h-screen relative">
+    <div
+      className="min-h-screen relative"
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/background.png)`,
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <Navigation onOpenTickets={() => setTicketOverlayOpen(true)} />
       <StickyTicketButton onOpenTickets={() => setTicketOverlayOpen(true)} />
 

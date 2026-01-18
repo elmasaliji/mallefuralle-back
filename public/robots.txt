@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /.env
+
+Sitemap: https://www.mallefüralle.de/sitemap.xml
+
+Allow: /ticket
+Allow: /event/
+Allow: /#

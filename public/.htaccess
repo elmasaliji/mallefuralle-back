@@ -1,0 +1,28 @@
+# UTF-8 encoding
+AddDefaultCharset UTF-8
+
+# Redirect www to non-www (ili obrnuto)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.mallefüralle\.de [NC]
+RewriteRule ^(.*)$ https://mallefüralle.de/$1 [L,R=301]
+
+# HTTPS redirect
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Cache busting
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json
+</IfModule>

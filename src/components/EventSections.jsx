@@ -98,17 +98,24 @@ export const CountdownSection = () => {
 const ArtistFlipCard = ({ artist }) => {
   const [flipped, setFlipped] = useState(false);
 
+  const toggle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setFlipped((v) => !v);
+  };
+
   return (
-    <div
-      className="flip-card h-[350px] sm:h-[400px] md:h-[450px] stagger-item select-none"
-      role="button"
-      tabIndex={0}
-      onClick={() => setFlipped((v) => !v)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') setFlipped((v) => !v);
-      }}
-    >
-      <div className={`flip-card-inner ${flipped ? 'is-flipped' : ''}`}>
+    <div className="flip-card h-[350px] sm:h-[400px] md:h-[450px] stagger-item select-none">
+      <div
+        className={`flip-card-inner ${flipped ? 'is-flipped' : ''}`}
+        role="button"
+        tabIndex={0}
+        onClick={toggle}
+        onTouchEnd={toggle}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') toggle(e);
+        }}
+      >
         <div className="flip-card-front bg-gradient-to-br from-[#1a1a1a] to-[#141414] border border-white/10">
           <img src={artist.image} alt={artist.name} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-transparent to-transparent"></div>
@@ -347,7 +354,6 @@ export const LineUpSection = () => {
                     );
                   })}
                 </div>
-
               </div>
             </div>
           </div>

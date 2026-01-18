@@ -13,7 +13,7 @@
   --malle-yellow: #ffdb00;
   --malle-glow: rgba(212, 14, 123, 0.5);
   --malle-glow-purple: rgba(150, 33, 255, 0.5);
-  
+
   /* Legacy support */
   --orange-primary: #ff8100;
   --orange-hover: #ffdb00;
@@ -124,14 +124,14 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes fire-border {
   0%, 100% {
-    box-shadow: 
+    box-shadow:
       0 0 5px var(--malle-pink),
       0 0 10px var(--malle-pink),
       0 0 15px var(--malle-purple),
       0 0 20px var(--malle-purple);
   }
   50% {
-    box-shadow: 
+    box-shadow:
       0 0 10px var(--malle-orange),
       0 0 20px var(--malle-orange),
       0 0 30px var(--malle-yellow),
@@ -162,82 +162,37 @@ h1, h2, h3, h4, h5, h6 {
   50% { filter: drop-shadow(0 0 15px #ff8100) drop-shadow(0 0 20px #ffdb00); }
 }
 
-
-
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.animate-slide-in-left {
-  animation: slide-in-left 0.6s ease-out forwards;
-}
-
-.animate-slide-in-right {
-  animation: slide-in-right 0.6s ease-out forwards;
-}
-
-.animate-slide-in-up {
-  animation: slide-in-up 0.6s ease-out forwards;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease-out forwards;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.4s ease-out forwards;
-}
-
-.animate-rotate-slow {
-  animation: rotate-slow 20s linear infinite;
-}
-
-.animate-bounce-soft {
-  animation: bounce-soft 2s ease-in-out infinite;
-}
-
-.animate-text-glow {
-  animation: text-glow 2s ease-in-out infinite;
-}
-
-.animate-fire-border {
-  animation: fire-border 1.5s ease-in-out infinite;
-}
-
-.animate-flame {
-  animation: flame 0.3s ease-in-out infinite;
-}
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+.animate-slide-in-left { animation: slide-in-left 0.6s ease-out forwards; }
+.animate-slide-in-right { animation: slide-in-right 0.6s ease-out forwards; }
+.animate-slide-in-up { animation: slide-in-up 0.6s ease-out forwards; }
+.animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
+.animate-scale-in { animation: scale-in 0.4s ease-out forwards; }
+.animate-rotate-slow { animation: rotate-slow 20s linear infinite; }
+.animate-bounce-soft { animation: bounce-soft 2s ease-in-out infinite; }
+.animate-text-glow { animation: text-glow 2s ease-in-out infinite; }
+.animate-fire-border { animation: fire-border 1.5s ease-in-out infinite; }
+.animate-flame { animation: flame 0.3s ease-in-out infinite; }
 
 /* Scroll Animation Classes */
-/* ============================================
-   ENHANCED SCROLL ANIMATIONS
-   ============================================ */
-
-/* Base state - hidden prije scrollovanja */
 .scroll-hidden {
   opacity: 0;
-  transform: translateY(80px) scale(0.95);  /* 🆕 DODATO: scale(0.95) */
-  filter: blur(5px);  /* 🆕 DODATO: blur efekat */
-  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);  /* 🆕 Bolji timing */
+  transform: translateY(80px) scale(0.95);
+  filter: blur(5px);
+  transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
 }
 
-/* Visible state - kada se animira */
 .scroll-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
-  filter: blur(0);  /* 🆕 Uklanjanje blur-a */
+  filter: blur(0);
 }
 
-/* 🆕 POTPUNO NOVA KLASA za stagger items */
 .stagger-item {
   opacity: 0;
   transform: translateY(60px);
-  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);  /* Bounce efekat */
+  transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .stagger-item.scroll-visible {
@@ -245,7 +200,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-/* 🆕 NOVE varijacije animacija */
 .scroll-from-left {
   opacity: 0;
   transform: translateX(-100px) rotate(-5deg);
@@ -279,19 +233,11 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1);
 }
 
-/* 🆕 NOVA cascade animacija */
 @keyframes cascade-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Utility Classes - New Gradients */
 .bg-gradient-malle {
   background: linear-gradient(135deg, var(--malle-pink) 0%, var(--malle-purple) 100%);
 }
@@ -314,7 +260,6 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text;
 }
 
-/* Legacy support */
 .bg-gradient-orange {
   background: linear-gradient(135deg, var(--malle-orange) 0%, var(--malle-yellow) 100%);
 }
@@ -350,7 +295,6 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 
-/* Title background text - behind section titles */
 .title-background-text {
   position: absolute;
   font-family: 'Bebas Neue', sans-serif;
@@ -366,7 +310,6 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.05em;
 }
 
-/* Primary Button - New Malle Style */
 .malle-btn {
   background: linear-gradient(135deg, var(--malle-pink) 0%, var(--malle-purple) 100%);
   color: white;
@@ -388,20 +331,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.3s ease;
 }
 
-.malle-btn:hover::before {
-  opacity: 1;
-}
+.malle-btn:hover::before { opacity: 1; }
 
 .malle-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 30px var(--malle-glow), 0 10px 30px var(--malle-glow-purple);
 }
 
-.malle-btn:active {
-  transform: translateY(0);
-}
+.malle-btn:active { transform: translateY(0); }
 
-/* Legacy orange button */
 .orange-btn {
   background: linear-gradient(135deg, var(--malle-pink) 0%, var(--malle-purple) 100%);
   color: white;
@@ -414,9 +352,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 10px 30px var(--malle-glow);
 }
 
-.orange-btn:active {
-  transform: translateY(0);
-}
+.orange-btn:active { transform: translateY(0); }
 
 /* Flip Card Styles */
 .flip-card {
@@ -429,10 +365,29 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.flip-card:hover .flip-card-inner {
+/* flip samo na state */
+.flip-card-inner.is-flipped {
   transform: rotateY(180deg);
+}
+
+/* NA TOUCH UREĐAJIMA TOTALNO UGASI hover flip (sticky hover fix) */
+@media (hover: none) {
+  .flip-card:hover .flip-card-inner {
+    transform: none;
+  }
+}
+
+/* NA DESKTOPU dozvoli hover flip */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
 }
 
 .flip-card-front,
@@ -481,8 +436,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;   /* bijela pozadina */
-    --foreground: 0 0% 10%;    /* tamni tekst */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 10%;
     --popover: 0 0% 100%;
@@ -503,7 +458,6 @@ h1, h2, h3, h4, h5, h6 {
     --radius: 0.75rem;
   }
 }
-
 
 @layer base {
   * {

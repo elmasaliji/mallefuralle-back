@@ -287,7 +287,7 @@ export const impressumData = {
   company: "CFE-Veranstaltung UG",
   address: "Hermann-Kiese-Straße 4, 99098 Erfurt",
   phone: "+49 157 88509144",
-  email: "info@mallefueralle.de",
+  email: "Veranstaltungen-cfe@outlook.de",
   ceo: "Christopher Finholdt",
   register: "HRB 521604, Amtsgericht Jena",
   vatId: "DE366443410",

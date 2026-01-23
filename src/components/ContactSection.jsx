@@ -23,6 +23,12 @@ const TikTokIcon = ({ className }) => (
 export const ContactSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();       // sprječava reload
+    setIsSubmitted(true);     // prikazuje poruku
+    e.target.reset();         // prazni formu
+  };
+
   return (
     <section id="contact" className="relative py-16 md:py-24 lg:py-32 overflow-hidden scroll-animate">
       {/* Pozadine i animacije ostaju iste */}
@@ -41,7 +47,7 @@ export const ContactSection = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6">
-        {/* Header sekcija ostaje */}
+        {/* Header sekcija */}
         <div className="text-center mb-10 md:mb-16 relative">
           <div className="title-background-text hidden sm:block">KONTAKT</div>
           <div className="relative z-10">
@@ -62,10 +68,11 @@ export const ContactSection = () => {
           {/* Kontakt info i social */}
           <div className="space-y-6 md:space-y-8 stagger-item">
             <div className="space-y-4">
-              {[{ icon: Mail, label: 'E-Mail', value: impressumData.email, href: `mailto:${impressumData.email}` },
+              {[
+                { icon: Mail, label: 'E-Mail', value: impressumData.email, href: `mailto:${impressumData.email}` },
                 { icon: Phone, label: 'Telefon', value: impressumData.phone, href: `tel:${impressumData.phone}` },
-                { icon: MapPin, label: 'Adresse', value: impressumData.address }]
-                .map((item, i) => (
+                { icon: MapPin, label: 'Adresse', value: impressumData.address }
+              ].map((item, i) => (
                 <div key={i} className="group p-5 md:p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#d40e7b]/50 transition-all duration-500 hover:translate-x-2 stagger-item">
                   <div className="flex items-center gap-4">
                     <div className="p-3 md:p-4 rounded-xl bg-gradient-to-br from-[#d40e7b]/20 to-[#9621ff]/20">
@@ -102,26 +109,31 @@ export const ContactSection = () => {
           {/* Forma */}
           <div className="relative stagger-item">
             <div className="p-6 md:p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
-              {isSubmitted ? (
-                <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl shadow-2xl animate-bounce-soft">
-                  <CheckCircle className="w-6 h-6 text-white flex-shrink-0" />
-                  <div>
-                    <h3 className="font-bold text-white text-lg">Ihre Nachricht wurde gesendet!</h3>
-                    <p className="text-green-100 text-sm">Wir melden uns so schnell wie möglich.</p>
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                className="space-y-5"
+                onSubmit={handleSubmit}
+              >
+                {/* hidden field za Netlify */}
+                <input type="hidden" name="form-name" value="contact" />
+
+                <Input name="name" placeholder="Name" required className="text-white placeholder:text-gray-400" />
+                <Input name="email" type="email" placeholder="E-Mail" required className="text-white placeholder:text-gray-400" />
+                <Input name="subject" placeholder="Betreff" required className="text-white placeholder:text-gray-400" />
+                <Textarea name="message" rows={5} placeholder="Nachricht" required className="text-white placeholder:text-gray-400" />
+
+                {isSubmitted && (
+                  <div className="p-3 bg-green-500/20 border border-green-500 rounded-lg text-green-700 text-sm">
+                    Ihre Nachricht wurde gesendet!
                   </div>
-                </div>
-              ) : (
-                // ✅ Netlify Forms: dodaj attribute netlify i name
-                <form name="contact" netlify className="space-y-5" onSubmit={() => setIsSubmitted(true)}>
-                  <Input name="name" placeholder="Name" required />
-                  <Input name="email" type="email" placeholder="E-Mail" required />
-                  <Input name="subject" placeholder="Betreff" required />
-                  <Textarea name="message" rows={5} placeholder="Nachricht" required />
-                  <Button type="submit" className="w-full malle-btn">
-                    <Send className="w-4 h-4 mr-2" /> Nachricht senden
-                  </Button>
-                </form>
-              )}
+                )}
+
+                <Button type="submit" className="w-full malle-btn">
+                  <Send className="w-4 h-4 mr-2" /> Nachricht senden
+                </Button>
+              </form>
             </div>
           </div>
         </div>
